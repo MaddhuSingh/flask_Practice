@@ -1,133 +1,141 @@
-# Student Registration System
+**Jenkins CI/CD Pipeline for Flask Application** : This project demonstrates end-to-end CI/CD automation using Jenkins.
 
-A simple **Flask** web application to manage student records with **MongoDB** as the backend database. Users can **add, view, update, and delete** student details..
+ **Project Overview**
 
----
+This project demonstrates the implementation of a CI/CD pipeline using Jenkins for a Python Flask application. The pipeline automates the process of code integration, testing, and deployment.
+The application used is a sample Flask app (forked from an existing repository), and the main focus is on DevOps automation using Jenkins.
 
-## Features
+___________________________________________________________________________________________________________________________________________________________
 
-* List all students on the home page
-* Add a new student
-* Update existing student details
-* Delete a student with confirmation
-* Simple and responsive UI using Bootstrap
+**Objective**
 
----
+Automate build, test, and deployment process
+Integrate GitHub with Jenkins
+Implement CI/CD pipeline using Jenkinsfile
+Configure email notifications for build status
 
-## Tech Stack
+____________________________________________________________________________________________________________________________________________________________
 
-* **Backend:** Python, Flask
-* **Database:** MongoDB (via Flask-PyMongo)
-* **Frontend:** HTML, Jinja2 templates, Bootstrap 5
-* **Environment Variables:** Managed via `.env` file
+**Technologies Used**
 
----
+Jenkins
+Python (Flask)
+Git & GitHub
+Pytest
+Email Extension Plugin (Jenkins)
 
-## Setup Instructions
+_____________________________________________________________________________________________________________________________________________________________
 
-### 1. Clone the repository
+**CI/CD Pipeline Stages**
 
-```bash
-git clone <your-repo-url>
-cd <repo-folder>
-```
+1️- Checkout Code
+Jenkins pulls code from GitHub repository
+2️- Build
+Install dependencies using requirements.txt
+3️- Test
+Run test cases using pytest
+4️- Deploy
+Application deployment step (basic execution)
+5️- Post Actions
+Send email notification on success/failure
 
-### 2. Create and activate a virtual environment
+_______________________________________________________________________________________________________________________________________________________________
 
-```bash
-python -m venv venv
-# Activate venv
-# Windows:
-venv\Scripts\activate
-# Linux / Mac:
-source venv/bin/activate
-```
+**Project Structure**
 
-### 3. Install dependencies
+flask_Practice/
+│── app.py
+│── requirements.txt
+│── test_app.py
+│── Jenkinsfile
+│── templates/
 
-```bash
-pip install -r requirements.txt
-```
+_________________________________________________________________________________________________________________________________________________________________
 
-**`requirements.txt` example:**
+**Jenkins Configuration**
 
-```
-Flask
-Flask-PyMongo
-python-dotenv
-bson
-```
+Configured GitHub repository integration
+Added credentials for secure access
+Configured pipeline job
+Installed Email Extension Plugin
+Configured SMTP using Gmail
 
-### 4. Configure environment variables
+__________________________________________________________________________________________________________________________________________________________________
 
-Create a `.env` file in the project root:
+**Required Screenshots**
 
-```
-MONGO_URI=<your-mongodb-connection-string>
-SECRET_KEY=<your-secret-key>
-```
-
-### 5. Run the application
-
-```bash
-python app.py
-```
-
-Open your browser at: [http://localhost:8000](http://localhost:8000)
-
----
-
-## Project Structure
-
-```
-project/
-│
-├── templates/
-│   ├── base.html
-│   ├── index.html
-│   ├── add_student.html
-│   ├── update_student.html
-│
-├── app.py
-├── requirements.txt
-└── .env
-```
-
----
-
-## Screenshots
-
-**Home Page**
-Lists all students with Edit/Delete buttons.
-- <img width="1902" height="607" alt="image" src="https://github.com/user-attachments/assets/a58a6a6d-4978-4769-8074-232e4d31e69d" />
+🔹 **Jenkins Pipeline Success**
 
 
-**Add Student**
-Form to add a new student.
-- <img width="1897" height="801" alt="image" src="https://github.com/user-attachments/assets/d65d25c3-ebb5-410a-adb1-e130ad7c5878" />
+<img width="940" height="452" alt="image" src="https://github.com/user-attachments/assets/6eacc0f8-e6f1-4fb3-b8a4-7232552a0fce" />
 
 
-**Update Student**
-Form pre-filled with student details.
-- <img width="1905" height="897" alt="image" src="https://github.com/user-attachments/assets/04febf01-879f-431f-ab07-abcfb993acf1" />
+<img width="940" height="453" alt="image" src="https://github.com/user-attachments/assets/bc182144-3a2b-41e1-8541-aea4d380c7a9" />
 
 
+🔹** Email Notification**
 
----
-
-## Notes
-
-* Make sure MongoDB is running and accessible via the URI in `.env`
-* Delete action includes a confirmation page to prevent accidental deletion
-* Uses `ObjectId` from `bson` to work with MongoDB document IDs
-
----
-
-## License
-
-MIT License
-
----
+<img width="940" height="360" alt="image" src="https://github.com/user-attachments/assets/2facc4df-cbfb-4f6d-b74f-19b71842e6fe" />
 
 
+🔹 **Jenkins Configuration**
 
+<img width="1895" height="810" alt="image" src="https://github.com/user-attachments/assets/87ec3a1e-a772-466e-817f-1de62096f4a5" />
+
+
+<img width="1862" height="943" alt="image" src="https://github.com/user-attachments/assets/c9b8121a-c3ec-4be8-849e-337f1d294dad" />
+
+
+___________________________________________________________________________________________________________________________________________________________________
+
+
+**Email Notification Setup**
+
+SMTP Server: smtp.gmail.com
+Port: 587
+Used App Password for authentication
+Enabled TLS
+
+___________________________________________________________________________________________________________________________________________________________________
+
+**Results**
+
+Pipeline executed successfully
+Automated testing completed
+Email notification received on build success
+
+___________________________________________________________________________________________________________________________________________________________________
+
+**Key Learnings**
+
+Jenkins pipeline creation
+CI/CD workflow automation
+GitHub integration with Jenkins
+Email notification setup
+Handling dependencies and testing in CI
+
+___________________________________________________________________________________________________________________________________________________________________
+
+**Changes Done by Me**
+
+Implemented Jenkins CI/CD pipeline
+Configured automated testing
+Added email notification functionality
+Integrated GitHub with Jenkins
+
+___________________________________________________________________________________________________________________________________________________________________
+
+**Forked Repository URL**
+
+https://github.com/MaddhuSingh/flask_Practice.git
+
+___________________________________________________________________________________________________________________________________________________________________
+
+
+**Conclusion**
+
+**This project demonstrates how CI/CD pipelines can automate the software delivery process, improving efficiency and reducing manual effort.**
+
+_**This project focuses on DevOps practices rather than application development.**_
+
+___________________________________________________________________________________________________________________________________________________________________
