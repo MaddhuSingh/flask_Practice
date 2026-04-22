@@ -33,12 +33,19 @@ pipeline {
     }
 
     post {
-        success {
-            echo 'Build Successful!'
-        }
-        failure {
-            echo 'Build Failed!'
-        }
+    success {
+        emailext (
+            subject: "SUCCESS: ${env.JOB_NAME}",
+            body: "Build Successful!",
+            to: "madhuawsdevops747@gmail.com"
+        )
+    }
+    failure {
+        emailext (
+            subject: "FAILED: ${env.JOB_NAME}",
+            body: "Build Failed!",
+            to: "madhuawsdevops747@gmail.com"
+        )
     }
 }
 
